@@ -1,0 +1,55 @@
+# DRAGONWIND default simulation parameters (May 2025 IEA China update)
+# All capacities in GW unless specified
+
+renewable_capacity:
+  initial:
+    solar: 620  # China solar installed end-2024 (GW) – IEA WEO 2025 data
+    wind: 580   # China wind installed end-2024 (GW)
+  growth_rates:
+    # Average annual growth (2025-2030) consistent with IEA NZE trajectory
+    solar: 0.10  # 10 % p.a.
+    wind: 0.08   # 8 % p.a.
+
+# Grid transmission base capacity (placeholder, adjustable)
+grid:
+  initial_transmission_gw: 1500
+  annual_expansion_rate: 0.05  # 5 % p.a.
+
+bess:
+  initial_power_gw: 20
+  energy_power_ratio: 4   # 4h storage
+  initial_energy_gwh: 80  # derived but keep for clarity
+  annual_addition_gw: 10
+
+ev:
+  initial_stock_million: 15  # EVs on road in 2025
+  annual_growth_rate: 0.25   # 25% yearly
+  avg_consumption_kwh_per_km: 0.15
+  avg_distance_km: 12000
+  managed_charging_share: 0.4  # 5 % p.a.
+
+# Green finance parameters (Billion RMB)
+finance:
+  bonds_initial: 500
+  credit_initial: 2000
+  investment_effectiveness: 0.05  # GW per B RMB
+
+# Carbon pathway parameters
+bri:
+  total_investment_b_usd: 92.4  # 2024 BRI energy investment
+  initial_green_share: 0.52
+  innovation_boost_factor: 0.001
+
+installation:
+  initial_capacity_gw: 200  # EPC workforce capacity 2025
+  annual_growth_rate: 0.08  # 8 % p.a.
+
+manufacturing:
+  initial_solar_capacity_gw: 140  # 2025 domestic module output
+  initial_wind_capacity_gw: 120   # 2025 turbine component output
+  annual_growth_rate: 0.10        # factory line ramp-up
+
+carbon:
+  fossil_generation_twh: 5600  # IEA 2024 electricity fossil generation estimate
+  emission_factor_tco2_per_mwh: 0.75
+  renewable_capacity_factor: 0.35
